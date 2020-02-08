@@ -11,6 +11,10 @@ RUN wget https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_a
 
 FROM alpine:3.7 as app
 
+RUN apk add --no-cache \
+    tmux && \
+    mkdir /root/.kube
+
 COPY --from=stage ["/usr/local/bin/okteto", "/usr/local/bin/stern", "/usr/local/bin/"]
 
 ENTRYPOINT ["/bin/sh"]
