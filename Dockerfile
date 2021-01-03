@@ -1,4 +1,4 @@
-FROM alpine:3.7 as stage
+FROM alpine:3.11 as stage
 
 RUN apk add --no-cache \
     git \
