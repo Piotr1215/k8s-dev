@@ -9,7 +9,7 @@ RUN wget https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_a
     mv stern_linux_amd64 /usr/local/bin/stern && \
     curl https://get.okteto.com -sSfL | sh
 
-FROM alpine:3.12 as app
+FROM alpine:3 as app
 
 RUN apk add --no-cache \
     tmux && \
